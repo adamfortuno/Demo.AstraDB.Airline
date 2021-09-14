@@ -129,7 +129,7 @@ In this step, you will generate the data files to be used in this exercise.
 Data files will be added to the `database/` directory, replacing any previous versions. Taken togther, they create a fully populated database with 4.1 million ticket records for 41,000 flights.
 
 ---
-## **Step-4:** Load City Data and Flight Data using Console
+## **Step-7:** Load City Data and Flight Data using Console
 
 1. Click the **Load Data** button at the top of the page.
 
@@ -169,7 +169,7 @@ At this point, you have loadd the city (departure and destination) data into the
 You conclude this step having executed three separate loads through the console. The `flight_by_id` and `flight_by_city` tables will have been created as part of this exercise.
 
 ---
-## **Step-5:** Load Baggage and Ticket Data Using dsbulk
+## **Step-8:** Load Baggage and Ticket Data Using dsbulk
 
 1. Launch a new shell (terminal) session.
 2. Navigate to the project folder.
@@ -209,7 +209,7 @@ You conclude this step having executed three separate loads through the console.
     **NOTE:** You downloaded the secure connection bundle in step-3. You created the keyspace in step-1.
 
 ---
-## **Step-6:** Add Credentials to Mobile Application
+## **Step-9:** Add Credentials to Mobile Application
 
 In this step, you will create a credential file for use by the mobile application.
 
