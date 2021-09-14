@@ -250,9 +250,60 @@ This sections provides some guidance on installing dependencies.
 
 You can find instructions on installing dsbulk from the [DataStax Bulk Loader](https://docs.datastax.com/en/astra/docs/loading-and-unloading-data-with-datastax-bulk-loader.html) article on [docs.datastax.com](https://docs.datastax.com/).
 
-### Subscribe and Setup Astra DB
+### Subscribe to Astra and Setup DB
 
 There are several ways to subscribe to Astra. Possibly the simplist is to navigate to astra.datastax.com, click the Sign-Up link, and complete the registration form. Subscribers don't need to credit card or other payment information, and they can register with a Google or Github account.
+
+### Install Flutter, XCode, and Android Studio
+
+The following instructions guide you on installing Flutter and dependent software. For detailed instructions, see the documentation for that product.
+
+**Step-1:** Download and install Flutter.
+
+```sh
+flutter_package_name="flutter_macos_2.2.3-stable.zip"
+
+curl -LO "https://storage.googleapis.com/flutter_infra_release/releases/stable/macos/${flutter_package_name}" && unzip "./${flutter_package_name}"
+mkdir -p ~/bin/flutter
+mv ./flutter ~/bin/ && rm "${flutter_package_name}"
+echo 'export PATH=$PATH:$HOME/bin/flutter/bin' >> ~/.bashrc
+source ~/.bashrc
+```
+
+**Step-2:** (MacOS Only) Download and Install XCode from the Apple App Store. This takes a bit.
+**Step-3:** Configure XCode for use:
+
+```sh
+sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+sudo xcodebuild -runFirstLaunch
+```
+
+**Step-3:** Download and Install Android Studio.
+
+1. From your web browser, navigate to "https://developer.android.com/" and download Android studio.
+2. Download, install, and configure Android Studio. On MacOS, you drag and drop the application into the Applications folder. After installation, launch 
+3. Launch Android Studio. A wizard starts on first launch. The wizard will include an "SDK Components Setup". Select the following:
+
+* Android SDK
+* API 30: Android 11.0
+* Performace (Intel HAXM) - if you can
+* Android Virtual Device
+
+NOTE: You can install additional Android SDK's from the SDK Manager, under the "Configure" menu on the startup screen. 
+
+**Step-4:** Verify your Flutter installation by running Flutter Doctor:
+
+```
+flutter doctor
+```
+
+You should see all  green checkmarks. You want Flutter Doctor to return all green checkmarks. However, it might not. If the doctor tells you to enable Android licenses, update components, or install additional software. Do what the doctor tells you.
+
+**NOTE:** You can accept the licenses with the following command:
+
+```sh
+flutter doctor --android-licenses
+```
 
 ## License
 
