@@ -2,7 +2,7 @@
 
 Welcome to AirStax!
 
-Our fictional airline, AirStax, developed a passanger self service platform named Check-in, Experience, and Tickets or CHET for short. CHET is composed of a mobile application and website. It stores data in a Cassandra keyspace, which is hosted in Astra DB. We're using CHET to demonstrate how developers can use DataStax's database-as-a-service, [Astra DB](https://www.datastax.com/products/datastax-astra), to quickly build scalable and fault tolerant systems.
+Our fictional airline, AirStax, developed a passenger self service platform named Check-in, Experience, and Tickets or CHET for short. CHET is composed of a mobile application and website. It stores data in a Cassandra keyspace, which is hosted in Astra DB. We're using CHET to demonstrate how developers can use DataStax's database-as-a-service, [Astra DB](https://www.datastax.com/products/datastax-astra), to quickly build scalable and fault tolerant systems.
 
 ## Project
 
@@ -26,11 +26,11 @@ Before attempting to install or run CHET ensure the following prerequisites have
 
 1. Availability of an Active Astra DB subscription 
 1. Python 3.x installed on the project's host
-1. Node.js 14.x installed on the project's host
-1. Flutter 2.x installed on the project's host
+1. [Node.js](https://nodejs.org/en/) 14.x installed on the project's host
+1. [Flutter](https://flutter.dev/) 2.x installed on the project's host
 1. Apple Xcode installed on the project's host (MacOS only)
 1. Android Studio installed on the project's host
-1. The dsbulk utility installed on the project's host
+1. The [dsbulk utility](https://docs.datastax.com/en/dsbulk/doc/dsbulk/install/dsbulkInstall.html) installed on the project's host
 
 Deploy the solution by executing the following steps:
 
@@ -39,10 +39,10 @@ Deploy the solution by executing the following steps:
 
 In this step, you'll be creating the database and keyspace used by the application.
 
-1. Navigate to astra.datastax.com.
-2. Login to the console.
-3. Create a new database and keyspace by clicking the `Create Serverless Database` link and completing the `Create a Database` form.
-
+1. Navigate to [astra.datastax.com](https://astra.datastax.com/).
+2. Login/register via the console .
+3. Create a new serverless database and keyspace by clicking the `Create Serverless Database` link on the right side of console and completing the `Create a Database` form.
+![serverless](/docs/serverless-button.png)
 **NOTE:** It will take a few moments for your new database to be provisioned. Wait for the database's state to turn to `Active` before proceeding to the next step.
 
 ---
@@ -104,7 +104,7 @@ You can verify the tables were created successfully by issuing the command `desc
 
 In this step, you will generate the data files to be used in this exercise.
 
-1. Navigate to the `Python` directory in this project.
+1. Navigate to the `python` directory in this project.
 2. Create a file named `credentials.py` in the directory with the following contents:
 
     ```python
@@ -120,13 +120,13 @@ In this step, you will generate the data files to be used in this exercise.
     ```
     **NOTE:** Some users may prefer to install dependent modules in a separate environment. Please see documentation for `venv` to create and load a virtual environment to host any dependent modules.
 
-4. Generate the data files by executing the `generate.py` file:
+4. Generate the city and flight csv data files used in Step 7 by executing the `generate.py` file:
 
     ```sh
     python3 generate.py
     ```
 
-Data files will be added to the `database/` directory, replacing any previous versions. Taken togther, they create a fully populated database with 4.1 million ticket records for 41,000 flights.
+Data files will be added to the `database/` directory, replacing any previous versions. Taken together, they create a fully populated database with 4.1 million ticket records for 41,000 flights.
 
 ---
 ## **Step-7:** Load City Data and Flight Data using Console
@@ -160,7 +160,7 @@ Data files will be added to the `database/` directory, replacing any previous ve
 8. Select the keyspace name from the **Target Keyspace** drop down.
 9. Click the **Next** button.
 
-At this point, you have loadd the city (departure and destination) data into the database. Now, you'll upload the flight data into the database.
+At this point, you have loaded the city (departure and destination) data into the database. Now, you'll upload the flight data into the database.
 
 10. Load the `flight_by_id.csv` file as you did with the `city.csv` data. Ensure the table name is `flight_by_id` and set the partition key to `id`.
 
